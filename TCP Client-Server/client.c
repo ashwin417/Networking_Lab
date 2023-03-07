@@ -28,7 +28,7 @@ int main()
 		printf("Error in connecting to server...");
 	}
 	
-	printf("Enter the data to be sent : ");
+	printf("Enter the data to be sent to the server: ");
 	fgets(buf,100,stdin);
 	
 	k = send(sock_desc,buf,100,0);
