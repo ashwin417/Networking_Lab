@@ -8,3 +8,15 @@
       ./client localhost 3004
 
 ### First Run server.c in a tab in the terminal and then run the client.c in another tab.
+
+
+### OUTPUT pics
+
+#### Server
+
+![alt text](https://github.com/ashwin417/Networking_Lab/blob/main/UDP_Client_Server/Server.png)
+
+
+#### Client
+
+![alt text](https://github.com/ashwin417/Networking_Lab/blob/main/UDP_Client_Server/Client.png)
