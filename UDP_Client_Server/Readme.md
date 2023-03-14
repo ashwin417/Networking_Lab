@@ -20,3 +20,5 @@
 #### Client
 
 ![alt text](https://github.com/ashwin417/Networking_Lab/blob/main/UDP_Client_Server/Client.png)
+
+Key: To Create a new tab in terminal like in the above output pics:           CTRL + SHIFT + T
