@@ -4,10 +4,13 @@
 #include<string.h>
 #include<stdlib.h>
 #include<sys/socket.h>
+#include<sys/types.h>
 #include <unistd.h>
+#define MAX 80
+#define port 8080
 int main()
 {
-	char buf[100];
+	char buff[MAX];
 	int k;
 	socklen_t len;
 	int sock_desc, temp_sock_desc;
@@ -18,22 +21,25 @@ int main()
 	{
 		printf("Error in Socket Creation!!!");
 	}
-	
+	else 
+		printf("Socket successfully created!");
+	bzero(&server,sizeof(server));		//erases the data
 	server.sin_family = AF_INET;
 	server.sin_addr.s_addr = INADDR_ANY;
+	server.sin_port = htons(port);
 	
-	server.sin_port = 3003;
 	client.sin_family = AF_INET;
-	
 	client.sin_addr.s_addr = INADDR_ANY;
-	client.sin_port = 3003;
+	client.sin_port = htons(port);
 	
 	k = bind(sock_desc,(struct sockaddr*) &server, sizeof(server));
 	
 	if(k==-1)
 	{
-		printf("Error in binding...");
+		printf("Error in binding...\n");
 	}
+	else
+		printf("Binded Successfully\n");
 	//printf("binded");
 	k=listen(sock_desc,5);
 	
@@ -47,24 +53,45 @@ int main()
 	
 	if(temp_sock_desc == -1)
 	{
-		printf("Error in Temporary socket creation!");
+		printf("\nError in Temporary socket creation!\n");
 	}
 	
-	k = recv(temp_sock_desc,buf,100,0);
+	/*k = recv(temp_sock_desc,buf,100,0);
 	
 	if(k==-1)
 	{
 		printf("Error in recieving");
+	}*/
+	int x;
+	for(;;)
+	{
+		bzero(buff,MAX);
+		read(temp_sock_desc,buff,sizeof(buff));
+		if(strncmp(buff,"exit",4)==0)
+		{
+			printf("Exitting");
+			break;
+		}
+		//printf("\nFrom client:%s\t To Client:",buff);
+		x=0;
+		
+		//while(buff[x++]=getchar()!='\n');
+		int n = atoi(buff);
+		int i,fact=1;
+		  for(i=1;i<=n;i++){    
+	      			fact=fact*i;    
+	  		}  
+		bzero(buff,MAX);
+		printf("\nFactorial of the number sent from client is: %d", fact);
+		sprintf(buff,"\nFactorial of the number sent from client is: %d",fact);
+		//itoa(sizeof(buff),buff);
+		write(temp_sock_desc,buff,sizeof(buff));
+		if(strncmp("exit",buff,4)==0)
+		{
+		printf("\nServer exits\n");
+		break;
+		}
 	}
-	
-	
-	int n = atoi(buf);
-	int i,fact=1;
-	  for(i=1;i<=n;i++){    
-      			fact=fact*i;    
-  		}  
-	
-	printf("Factorial of the number sent from client is: %d", fact);
 	close(temp_sock_desc);
 		
 	
@@ -72,3 +99,31 @@ int main()
 	
 
 }
+
+/*void itoa(int n, char s[])
+ {
+     int i, sign;
+
+     if ((sign = n) < 0)  
+         n = -n;          
+     i = 0;
+     do {       
+         s[i++] = n % 10 + '0';   
+     } while ((n /= 10) > 0);     
+     if (sign < 0)
+         s[i++] = '-';
+     s[i] = '\0';
+     reverse(s);
+}  
+void reverse(char s[])
+ {
+     int i, j;
+     char c;
+
+     for (i = 0, j = strlen(s)-1; i<j; i++, j--) {
+         c = s[i];
+         s[i] = s[j];
+         s[j] = c;
+     }
+}  
+*/
