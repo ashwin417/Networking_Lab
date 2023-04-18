@@ -5,7 +5,6 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <stdio.h>
-#include <string.h>
 #include <time.h>
 
 #define S_PORT 43454
@@ -16,13 +15,13 @@
 
 
 int main(int argc, char const *argv[]) {
-	int sfd;
+	int k;
 	int num = 1;
 	time_t start_time, rtt, current_time;
 	struct sockaddr_in servaddr, clientaddr;
 	socklen_t addrlen;
-	sfd = socket(AF_INET, SOCK_DGRAM,IPPROTO_UDP);
-	if (sfd == ERROR) {
+	k = socket(AF_INET, SOCK_DGRAM,IPPROTO_UDP);
+	if (k == ERROR) {
 		perror("Could not open a socket");
 		return 1;
 	}
@@ -36,7 +35,7 @@ int main(int argc, char const *argv[]) {
 	clientaddr.sin_addr.s_addr=inet_addr(IP_STR);
 	clientaddr.sin_port=htons(C_PORT);
 
-	if((bind(sfd,(struct sockaddr *)&clientaddr,sizeof(clientaddr)))!=0) {
+	if((bind(k,(struct sockaddr *)&clientaddr,sizeof(clientaddr)))!=0) {
 		perror("Could not bind socket");
 		return 2;
 	}
@@ -44,9 +43,9 @@ int main(int argc, char const *argv[]) {
 	printf("Client is running on %s:%d\n", IP_STR, C_PORT);
 	start_time = time(NULL);
 	clock_t start = clock();
-	sendto(sfd, &num, sizeof(num), 0, (struct sockaddr *)&servaddr, sizeof(servaddr));
+	sendto(k, &num, sizeof(num), 0, (struct sockaddr *)&servaddr, sizeof(servaddr));
 	addrlen = sizeof(clientaddr);
-	recvfrom(sfd, &current_time, sizeof(current_time), 0, (struct sockaddr *)&clientaddr, &addrlen);
+	recvfrom(k, &current_time, sizeof(current_time), 0, (struct sockaddr *)&clientaddr, &addrlen);
 	clock_t end = clock();
 	double diff = end - start;
 	
