@@ -15,7 +15,7 @@
 
 int main(int argc, char const *argv[]) {
 	int k, num;
-	clock_t t = clock();
+	//clock_t t = clock();
 	time_t current_time;
 	struct sockaddr_in servaddr, clientaddr;
 	k = socket(AF_INET, SOCK_DGRAM,IPPROTO_UDP);
@@ -42,7 +42,7 @@ int main(int argc, char const *argv[]) {
 	while(1) {
 		recvfrom(k, &num, sizeof(num), 0, (struct sockaddr *)&clientaddr, (socklen_t *)&clientaddr);
 		current_time = time(NULL);
-		printf("Client at %s:%d asked for time: %s:%ld\n", inet_ntoa(clientaddr.sin_addr), ntohs(clientaddr.sin_port), ctime(&current_time),t);
+		printf("Client at %s:%d asked for time: %s:\n", inet_ntoa(clientaddr.sin_addr), ntohs(clientaddr.sin_port), ctime(&current_time));
 		sendto(k, &current_time, sizeof(current_time), 0, (struct sockaddr *)&clientaddr, sizeof(clientaddr));
 	}
 
