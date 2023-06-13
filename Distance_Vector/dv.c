@@ -72,3 +72,30 @@ int main()
 
     return 0;
 }
+
+/* [ashu@ArchAsh Distance_Vector]$ ./a.out 
+Number of nodes: 3
+
+Enter cost matrix
+0 2 999
+8 0 5
+7 1 2
+
+Router 1
+Node 1 via 1 : Distance 0
+Node 2 via 2 : Distance 2
+Node 3 via 2 : Distance 7
+
+
+Router 2
+Node 1 via 1 : Distance 8
+Node 2 via 2 : Distance 0
+Node 3 via 3 : Distance 5
+
+
+Router 3
+Node 1 via 1 : Distance 7
+Node 2 via 2 : Distance 1
+Node 3 via 3 : Distance 0
+
+[ashu@ArchAsh Distance_Vector]$  */
