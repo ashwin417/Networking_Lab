@@ -68,3 +68,15 @@ int main() {
     close(server_socket);
     return 0;
 }
+
+
+/* Output 
+
+[ashu@ArchAsh FTP]$ ./s
+FTP server listening on port 8080...
+Connected to client: 127.0.0.1:56606
+File received and saved as 'received_file.txt'
+
+recieved.txt
+    hello world
+*/
