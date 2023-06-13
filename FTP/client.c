@@ -55,3 +55,17 @@ int main() {
     close(socket_desc);
     return 0;
 }
+
+
+/*
+output:
+
+[ashu@ArchAsh FTP]$ ./c
+Connected to FTP server at 127.0.0.1:8080
+File sent successfully
+
+file_to_send.txt
+        hello world
+*/
+
+
