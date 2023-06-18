@@ -14,6 +14,10 @@
     8. SMTP
     9. Other Miscellaneous Trials
 
+
+#### PDF of Lab-Record
+    [Network Lab Manual](https://github.com/ashwin417/Networking_Lab/blob/main/NWLabRecord.pdf)
+
 ## Syllabus (KTU Syllabus)
     *Mandatory 
     (Note: At least one program from each topic in the syllabus should be completed in the Lab)
