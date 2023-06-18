@@ -16,7 +16,7 @@
 
 
 #### PDF of Lab-Record
-    [Network Lab Manual](https://github.com/ashwin417/Networking_Lab/blob/main/NWLabRecord.pdf)
+[Network Lab Manual](https://github.com/ashwin417/Networking_Lab/blob/main/NWLabRecord.pdf)
 
 ## Syllabus (KTU Syllabus)
     *Mandatory 
