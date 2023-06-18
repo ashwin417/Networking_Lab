@@ -9,6 +9,30 @@
 
 ### First Run server.c in a tab in the terminal and then run the client.c in another tab.
 
+#### OUTPUT
+
+##### [ashu@ArchAsh FTP]$ ./server
+     
+      FTP server listening on port 8080...
+      Connected to client: 127.0.0.1:56606
+      File received and saved as 'received_file.txt'
+
+
+##### recieved.txt
+          
+          hello world
+
+
+##### [ashu@ArchAsh FTP]$ ./client
+      
+      Connected to FTP server at 127.0.0.1:8080
+      File sent successfully
+
+##### file_to_send.txt
+       
+        hello world
+
+
 ### Algorithm :
       Server Algorithm: 
             1. Create a socket using socket() function. 
@@ -44,25 +68,4 @@
             8. Print a message indicating that the file has been sent successfully. 
             9. Close the client socket
 
-#### OUTPUT
-
-##### [ashu@ArchAsh FTP]$ ./server
-     
-      FTP server listening on port 8080...
-      Connected to client: 127.0.0.1:56606
-      File received and saved as 'received_file.txt'
-
-
-##### recieved.txt
-          
-          hello world
-
-
-##### [ashu@ArchAsh FTP]$ ./client
-      
-      Connected to FTP server at 127.0.0.1:8080
-      File sent successfully
-
-##### file_to_send.txt
-       
-        hello world
+### Code Explanation:
