@@ -43,3 +43,16 @@
             7. Close the file. 
             8. Print a message indicating that the file has been sent successfully. 
             9. Close the client socket
+
+### OUTPUT
+
+ 
+
+      [ashu@ArchAsh FTP]$ ./s
+      FTP server listening on port 8080...
+      Connected to client: 127.0.0.1:56606
+      File received and saved as 'received_file.txt'
+
+
+      recieved.txt
+          hello world
