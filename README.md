@@ -1,18 +1,18 @@
 # Networking_Lab
 ### Welcome to My Networking-Lab Repository!!!
-   This is a repository for Networking-programs in C for my College Purpose!
-   This repository contains code for Networking-program listed below and algorithm and code explanation for the codes are being updated.
-   1. TCP Client-Server
-   2. UDP Client-Server
-   3. Time-server application
-   4. Sliding-window protocols
-        a. Stop and Wait ARQ
-        b. Go Back N ARQ
-   5. File Transfer Protocol (FTP)
-   6. Congestion Control - Leaky Bucket Algorithm
-   7. Distance Vector Routing Algorithm
-   8. SMTP
-   9. Other Miscellaneous Trials
+    This is a repository for Networking-programs in C for my College Purpose!
+    This repository contains code for Networking-program listed below and algorithm and code explanation for the codes are being updated.
+    1. TCP Client-Server
+    2. UDP Client-Server
+    3. Time-server application
+    4. Sliding-window protocols
+            a. Stop and Wait ARQ
+            b. Go Back N ARQ
+    5. File Transfer Protocol (FTP)
+    6. Congestion Control - Leaky Bucket Algorithm
+    7. Distance Vector Routing Algorithm
+    8. SMTP
+    9. Other Miscellaneous Trials
 
 ## Syllabus (KTU Syllabus)
     *Mandatory 
@@ -98,5 +98,5 @@
 
 
 ### About
- Created by R Ashwin 
-    Year - 2023
+        Created by R Ashwin
+        Year - 2023
