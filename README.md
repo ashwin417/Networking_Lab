@@ -1,7 +1,7 @@
 # Networking_Lab
 ### Welcome to My Networking-Lab Repository!!!
     This is a repository for Networking-programs in C for my College Purpose!
-    This repository contains code for Networking-program listed below and algorithm and code explanation for the codes are being updated.
+    This repository contains code for Networking-program listed below and algorithm and code explanation for the programs.
     1. TCP Client-Server
     2. UDP Client-Server
     3. Time-server application
