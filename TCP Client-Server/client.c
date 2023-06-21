@@ -26,8 +26,7 @@ int main()
  printf("\n[To Server]:"); 
  fgets(buf,100,stdin); 
  if(strncmp("exit",buf,4)==0 || strncmp("Exit",buf,4)==0) 
- { 
- Page No:__ 
+ {  
  write(sock_desc,buf,sizeof(buf)); 
  printf("Exit Request Sent!\nExiting!!!\n"); 
  exit(0); 
