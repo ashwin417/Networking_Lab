@@ -28,12 +28,11 @@ int main() {
 
         // Process outgoing packets
         if (bucket_size > 0) {
-            int outgoing_packets = bucket_size < OUTPUT_RATE ? bucket_size : OUTPUT_RATE;
 
-            printf("Outgoing packets: %d\n", outgoing_packets);
+            printf("Outgoing packets: %d\n", OUTPUT_RATE);
 
             // Subtract outgoing packets from the bucket
-            bucket_size -= outgoing_packets;
+            bucket_size -= OUTPUT_RATE;
         }
 
         sleep(1);  // Wait for 1 second
